@@ -130,27 +130,31 @@
             <i class="fa fa-file-text-o mr-2"></i> Abstract
         </h2>
         <div class="text-gray-700 text-sm leading-relaxed">
+           
             <p class="mb-3">
-                Vehicle aerodynamics optimization is fundamental to automotive engineering, drag reduction, noise minimization, and vehicle body stability through complex fluid dynamics simulations.
-            </p>
-            <p class="mb-3">
-                Traditional approaches rely on computationally expensive CFD simulations that limit design exploration or simplified models that compromise accuracy. Machine learning methods offer promising alternatives but require high-fidelity training data that has been largely unavailable in the public domain.
+                Vehicle aerodynamics optimization has become critical for automotive electrification, where drag reduction directly determines electric vehicle range and energy efficiency.
             </p>
             <p class="mb-3">
-                The gap between academic machine learning research and industrial CFD applications remains unbridged due to the absence of datasets meeting rigorous engineering standards.
+                Traditional approaches face an intractable trade-off: computationally expensive CFD simulations requiring weeks per design iteration, or simplified models that sacrifice production-grade accuracy. 
             </p>
             <p class="mb-3">
-                Here we present DrivAerStar, a comprehensive and reproducible dataset of 12,000 high-precision automotive CFD simulations, created by 3 basic rear designs and 20 fine-tuned CAD parameters by the FFD algorithm, with all configurations simulated using the industry-standard STAR-CCM+ software.
+                While machine learning offers transformative potential, existing datasets exhibit fundamental limitations — inadequate mesh resolution, missing vehicle components, and validation errors exceeding 5% — preventing deployment in industrial workflows.
             </p>
             <p class="mb-3">
-                Unlike existing datasets, DrivAerStar provides complete engineering data that has been thoroughly validated against wind tunnel experiments with discrepancies below 5\%, including aerodynamic coefficients, surface pressures, and velocity fields. Our benchmarks demonstrate that machine learning models trained on this dataset achieve industrial-grade prediction accuracy while reducing computational costs by orders of magnitude.
+                We present DrivAerStar, comprising 12,000 industrial-grade automotive CFD simulations generated using Star-ccm+ software. The dataset systematically explores three vehicle configurations through 20 CAD parameters via FFD algorithms, including complete engine compartments and cooling systems with realistic internal airflow.
             </p>
             <p class="mb-3">
-                This dataset establishes a foundation for data-driven aerodynamic design methodologies that can transform automotive development processes.
+                DrivAerStar achieves wind tunnel validation accuracy below 1.04% — a five-fold improvement over existing datasets — through refined mesh strategies with strict wall \(y^+\) control. Benchmarks demonstrate that models trained on this data achieve production-ready accuracy while reducing computational costs from weeks to minutes.
             </p>
-            <p>
-                Beyond automotive applications, DrivAerStar represents a paradigm for integrating high-fidelity industrial-grade physics-based simulations with artificial intelligence, potentially extending to diverse engineering disciplines where computational constraints currently limit design optimization.
+            <p class="mb-3">
+                This represents the first dataset bridging academic machine learning research and industrial CFD practice, establishing a new standard for data-driven aerodynamic optimization in automotive development.
             </p>
+            <p class="mb-3">
+                Beyond automotive applications, DrivAerStar demonstrates a paradigm for integrating high-fidelity physics simulations with AI across engineering disciplines where computational constraints currently limit innovation.
+            </p>
+            
+
+
         </div>
     </section>
 
