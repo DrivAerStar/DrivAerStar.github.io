@@ -13,14 +13,14 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: '#2e7d32', // 绿色主题主色
-                        secondary: '#4caf50', // 辅助绿色
-                        light: '#f9fafb',
-                        gray: '#e5e7eb',
-                        dark: '#1f2937'
+                        primary: '#165DFF', // 专业蓝色主色
+                        secondary: '#4080FF', // 辅助蓝色
+                        light: '#F5F7FA',
+                        gray: '#E5E6EB',
+                        dark: '#1D2129'
                     },
                     fontFamily: {
-                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        sans: ['Inter', 'Helvetica', 'Arial', 'sans-serif'],
                         serif: ['Georgia', 'serif']
                     }
                 }
@@ -35,210 +35,183 @@
             .text-balance {
                 text-wrap: balance;
             }
-            .logo-container {
-                max-height: 80px;
+            .card-hover {
+                transition: all 0.3s ease;
+            }
+            .card-hover:hover {
+                transform: translateY(-4px);
+                box-shadow: 0 10px 25px -5px rgba(22, 93, 255, 0.1), 0 8px 10px -6px rgba(22, 93, 255, 0.05);
             }
         }
     </style>
 </head>
-<body class="bg-light text-dark min-h-screen flex flex-col items-center p-4 md:p-8 max-w-3xl mx-auto">
+<body class="bg-light text-dark min-h-screen flex flex-col items-center p-4 md:p-8 max-w-5xl mx-auto">
 
     <!-- 论文标题 -->
     <header class="w-full text-center mb-8 mt-6">
         <h1 class="text-[clamp(1.6rem,4vw,2.5rem)] font-bold text-primary leading-tight text-balance">
             DrivAerStar: An Industrial-Grade CFD Dataset for Vehicle Aerodynamic Optimization
         </h1>
-        <a href="https://github.com/DrivAerStar/DrivAerStar" target="_blank" 
-           class="text-sm text-gray-600 hover:text-primary flex items-center justify-center mt-3">
-            <i class="fa fa-link mr-1"></i> Code
-        </a>
-        <a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/UXVXQV" target="_blank" 
-           class="text-sm text-gray-600 hover:text-primary flex items-center justify-center mt-3">
-            <i class="fa fa-link mr-1"></i> dataset (uploading...)
-        </a>
+        <div class="flex flex-wrap justify-center gap-4 mt-4">
+            <a href="https://github.com/DrivAerStar/DrivAerStar" target="_blank" 
+               class="text-sm text-gray-600 hover:text-primary flex items-center">
+                <i class="fa fa-github mr-1"></i> Code
+            </a>
+            <a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/UXVXQV" target="_blank" 
+               class="text-sm text-gray-600 hover:text-primary flex items-center">
+                <i class="fa fa-database mr-1"></i> Dataset (uploading...)
+            </a>
+            <a href="https://arxiv.org/abs/2510.16857" target="_blank" 
+               class="text-sm text-gray-600 hover:text-primary flex items-center">
+                <i class="fa fa-file-pdf-o mr-1"></i> arXiv:2510.16857
+            </a>
+        </div>
     </header>
 
 
-   <section class="w-full mb-10 bg-white rounded-lg shadow-sm p-6">
-    <h2 class="text-lg font-semibold text-primary mb-4 flex items-center">
-        <i class="fa fa-users mr-2"></i> Authors & Affiliations
-    </h2>
-    
-    <!-- 第一行作者 -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-        <div class="text-center">
-            <p class="font-medium">Jiyan Qiu <span class="text-sm text-gray-500">1</span></p>
-            <p class="text-xs text-gray-600 mt-1">jiyanq0430@gmail.com</p>
-            <p class="text-xs text-gray-500 mt-2">NVIDIA</p>
+    <section class="w-full mb-10 bg-white rounded-lg shadow-sm p-6 card-hover">
+        <h2 class="text-lg font-semibold text-primary mb-4 flex items-center">
+            <i class="fa fa-users mr-2"></i> Authors & Affiliations
+        </h2>
+        
+        <!-- 作者网格布局 -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-x-6 gap-y-4 mb-6 text-center">
+            <div>
+                <p class="font-medium">Jiyan Qiu <span class="text-sm text-gray-500">1</span></p>
+                <p class="text-xs text-gray-600 mt-1">jiyanq0430@gmail.com</p>
+            </div>
+            <div>
+                <p class="font-medium">Lyulin Kuang <span class="text-sm text-gray-500">1</span></p>
+                <p class="text-xs text-gray-600 mt-1">lkuang@nvidia.com</p>
+            </div>
+            <div>
+                <p class="font-medium">Guan Wang <span class="text-sm text-gray-500">2</span></p>
+                <p class="text-xs text-gray-600 mt-1">wangguan.nantes@gmail.com</p>
+            </div>
+            <div>
+                <p class="font-medium">Yichen Xu <span class="text-sm text-gray-500">3,1,4,5</span></p>
+                <p class="text-xs text-gray-600 mt-1">xuyc@stu.pku.edu.cn</p>
+            </div>
+            <div>
+                <p class="font-medium">Leiyao Cui <span class="text-sm text-gray-500">3,4,5</span></p>
+                <p class="text-xs text-gray-600 mt-1">cuileiyaony@gmail.com</p>
+            </div>
+            <div>
+                <p class="font-medium">Shaotong Fu <span class="text-sm text-gray-500">1</span></p>
+                <p class="text-xs text-gray-600 mt-1">shaotongf@nvidia.com</p>
+            </div>
+            <div>
+                <p class="font-medium">Yixin Zhu <span class="text-sm text-gray-500">3,4,5,6 ✉</span></p>
+                <p class="text-xs text-gray-600 mt-1">yixin.zhu@pku.edu.cn</p>
+            </div>
+            <div>
+                <p class="font-medium">Ruihua Zhang <span class="text-sm text-gray-500">1 ✉</span></p>
+                <p class="text-xs text-gray-600 mt-1">ritaz@nvidia.com</p>
+            </div>
         </div>
-        <div class="text-center">
-            <p class="font-medium">Lyulin Kuang <span class="text-sm text-gray-500">1</span></p>
-            <p class="text-xs text-gray-600 mt-1">lkuang@nvidia.com</p>
-            <p class="text-xs text-gray-500 mt-2">NVIDIA</p>
-        </div>
-        <div class="text-center">
-            <p class="font-medium">Guan Wang <span class="text-sm text-gray-500">2</span></p>
-            <p class="text-xs text-gray-600 mt-1">wangguan.nantes@gmail.com</p>
-            <p class="text-xs text-gray-500 mt-2">Baidu, INC.</p>
-        </div>
-    </div>
 
-    <!-- 第二行作者 -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-        <div class="text-center">
-            <p class="font-medium">Yichen Xu <span class="text-sm text-gray-500">3,1,4,5</span></p>
-            <p class="text-xs text-gray-600 mt-1">xuyc@stu.pku.edu.cn</p>
-            <p class="text-xs text-gray-500 mt-2">NVIDIA / Peking University</p>
+        <!-- 机构备注（单独分行显示） -->
+        <div class="text-xs text-gray-500 mt-2">
+            <p class="mb-1"><span class="font-medium">Affiliations:</span></p>
+            <p>1: NVIDIA</p>
+            <p>2: Baidu, INC.</p>
+            <p>3: Peking University</p>
+            <p>4: State Key Lab of General AI, Peking University</p>
+            <p>5: Beijing Key Laboratory of Behavior and Mental Health, Peking University</p>
+            <p>6: Embodied Intelligence Lab, PKU-Wuhan Institute for Artificial Intelligence</p>
+            <p>✉: Corresponding authors</p>
         </div>
-        <div class="text-center">
-            <p class="font-medium">Leiyao Cui <span class="text-sm text-gray-500">3,4,5</span></p>
-            <p class="text-xs text-gray-600 mt-1">cuileiyaony@gmail.com</p>
-            <p class="text-xs text-gray-500 mt-2">Peking University</p>
-        </div>
-        <div class="text-center">
-            <p class="font-medium">Shaotong Fu <span class="text-sm text-gray-500">1</span></p>
-            <p class="text-xs text-gray-600 mt-1">shaotongf@nvidia.com</p>
-            <p class="text-xs text-gray-500 mt-2">NVIDIA</p>
-        </div>
-    </div>
+    </section>
 
-    <!-- 通讯作者 -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div class="text-center">
-            <p class="font-medium">Yixin Zhu <span class="text-sm text-gray-500">3,4,5,6 ✉</span></p>
-            <p class="text-xs text-gray-600 mt-1">yixin.zhu@pku.edu.cn</p>
-            <p class="text-xs text-gray-500 mt-2">Peking University (Corresponding Author)</p>
-        </div>
-        <div class="text-center">
-            <p class="font-medium">Ruihua Zhang <span class="text-sm text-gray-500">1 ✉</span></p>
-            <p class="text-xs text-gray-600 mt-1">ritaz@nvidia.com</p>
-            <p class="text-xs text-gray-500 mt-2">NVIDIA (Corresponding Author)</p>
-        </div>
-    </div>
-
-    <!-- 机构备注（更新序号对应关系） -->
-    <p class="text-xs text-gray-500 mt-4 text-center">
-        1:NVIDIA; 2:Baidu, INC.; 3:Peking University; 
-        4:State Key Lab of General AI, Peking University; 
-        5:Beijing Key Laboratory of Behavior and Mental Health, Peking University;
-        6:Embodied Intelligence Lab, PKU-Wuhan Institute for Artificial Intelligence
-    </p>
-</section>
     <!-- 摘要部分 -->
-    <section class="w-full mb-10 bg-white rounded-lg shadow-sm p-6">
+    <section class="w-full mb-10 bg-white rounded-lg shadow-sm p-6 card-hover">
         <h2 class="text-lg font-semibold text-primary mb-4 flex items-center">
             <i class="fa fa-file-text-o mr-2"></i> Abstract
         </h2>
         <div class="text-gray-700 text-sm leading-relaxed">
-           
             <p class="mb-3">
-                Vehicle aerodynamics optimization has become critical for automotive electrification, where drag reduction directly determines electric vehicle range and energy efficiency.
-            </p>
-            <p class="mb-3">
-                Traditional approaches face an intractable trade-off: computationally expensive CFD simulations requiring weeks per design iteration, or simplified models that sacrifice production-grade accuracy. 
-            </p>
-            <p class="mb-3">
-                While machine learning offers transformative potential, existing datasets exhibit fundamental limitations — inadequate mesh resolution, missing vehicle components, and validation errors exceeding 5% — preventing deployment in industrial workflows.
-            </p>
-            <p class="mb-3">
-                We present DrivAerStar, comprising 12,000 industrial-grade automotive CFD simulations generated using Star-ccm+ software. The dataset systematically explores three vehicle configurations through 20 CAD parameters via FFD algorithms, including complete engine compartments and cooling systems with realistic internal airflow.
-            </p>
-            <p class="mb-3">
-                DrivAerStar achieves wind tunnel validation accuracy below 1.04% — a five-fold improvement over existing datasets — through refined mesh strategies with strict wall \(y^+\) control. Benchmarks demonstrate that models trained on this data achieve production-ready accuracy while reducing computational costs from weeks to minutes.
-            </p>
-            <p class="mb-3">
-                This represents the first dataset bridging academic machine learning research and industrial CFD practice, establishing a new standard for data-driven aerodynamic optimization in automotive development.
-            </p>
-            <p class="mb-3">
-                Beyond automotive applications, DrivAerStar demonstrates a paradigm for integrating high-fidelity physics simulations with AI across engineering disciplines where computational constraints currently limit innovation.
-            </p>
+                Vehicle aerodynamics optimization has become critical for automotive electrification, where drag reduction directly determines electric vehicle range and energy efficiency. Traditional approaches face an intractable trade-off: computationally expensive CFD simulations requiring weeks per design iteration, or simplified models that sacrifice production-grade accuracy.
             
-
-
+                While machine learning offers transformative potential, existing datasets exhibit fundamental limitations — inadequate mesh resolution, missing vehicle components, and validation errors exceeding 5% — preventing deployment in industrial workflows.
+            
+                We present DrivAerStar, comprising 12,000 industrial-grade automotive CFD simulations generated using Star-CCM+ software. The dataset systematically explores three vehicle configurations through 20 CAD parameters via FFD algorithms, including complete engine compartments and cooling systems with realistic internal airflow.
+            
+                DrivAerStar achieves wind tunnel validation accuracy below 1.04% — a five-fold improvement over existing datasets — through refined mesh strategies with strict wall \(y^+\) control. Benchmarks demonstrate that models trained on this data achieve production-ready accuracy while reducing computational costs from weeks to minutes.
+            
+                This represents the first dataset bridging academic machine learning research and industrial CFD practice, establishing a new standard for data-driven aerodynamic optimization in automotive development. Beyond automotive applications, DrivAerStar demonstrates a paradigm for integrating high-fidelity physics simulations with AI across engineering disciplines where computational constraints currently limit innovation.
+            </p>
         </div>
     </section>
 
-
-
     <!-- 论文核心视频展示 -->
-    <section class="w-full mb-12 bg-white rounded-lg shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md">
+    <section class="w-full mb-12 bg-white rounded-lg shadow-sm overflow-hidden card-hover">
         <h2 class="text-lg font-semibold text-primary p-4 flex items-center">
             <i class="fa fa-video-camera mr-2"></i> Dataset Demo Video
         </h2>
         
-        <iframe title="vimeo-player" src="https://player.vimeo.com/video/1088663908?h=740d29c195" width="640" height="360" frameborder="0" referrerpolicy="strict-origin-when-cross-origin" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"   allowfullscreen></iframe>
+        <iframe title="vimeo-player" src="https://player.vimeo.com/video/1088663908?h=740d29c195" 
+                width="100%" height="560" frameborder="0" 
+                referrerpolicy="strict-origin-when-cross-origin" 
+                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
+                allowfullscreen></iframe>
         <div class="p-4 text-sm text-gray-600">
-            <p>Description: DrivAerStar dataset generation pipeline demonstration (geometric morphing, mesh generation, CFD simulation visualization)</p>
+            <p>Description: Demonstration of the DrivAerStar dataset generation pipeline, including geometric morphing, mesh generation, and CFD simulation visualization.</p>
         </div>
     </section>
 
-    <!-- 论文关键图片介绍 -->
+    <!-- 论文关键图片介绍（替换为arxiv页面内容） -->
     <section class="w-full space-y-10 mb-16">
-        <!-- 图片1：数据集对比分析
-        <div class="bg-white rounded-lg shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md">
+        <!-- 图1：数据集概览 -->
+        <div class="bg-white rounded-lg shadow-sm overflow-hidden card-hover">
             <div class="p-5">
-                <h3 class="text-lg font-semibold mb-2 text-primary"> Comparative analysis of state-of-the-art automotive CFD datasets</h3>
-                <img src="p1.png" alt="Comparative analysis of CFD datasets" class="w-full h-auto">
-                <p class="text-gray-700 text-sm">
-                    We quantitatively benchmark across experimental validation capabilities, numerical resolution parameters, and simulation accuracy metrics. PIV refers to Particle Image Velocimetry measurements for flow field validation; \(y^+\) represents dimensionless wall distance indicating boundary layer resolution quality; \(C_D\) denotes drag coefficient with associated uncertainty bounds; wind tunnel error quantifies percentage deviation from experimental measurements. All relevant test data are sourced from the corresponding original literature and publicly released datasets.
-                </p>
-            </div>
-        </div> -->
-
-        <!-- 图片2：数据集生成流程 -->
-        <div class="bg-white rounded-lg shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md">
-            
-            
-            
-            <div class="p-5">
-                <h3 class="text-lg font-semibold mb-2 text-primary">DrivAerStar data generation pipeline</h3>
-                <img src="p2.png" alt="Data generation pipeline" class="w-full h-auto">
-                <p class="text-gray-700 text-sm">
-                    (a) Beginning with three canonical DrivAer reference bodies (Estateback, Notchback, and Fastback) as the geometric foundation, (b) we apply parametric morphing through Blender to systematically vary 13 vehicle components, including greenhouse (top), rear diffuser (middle), and trunk lid (bottom). (c) Next, we generate refined hexahedral-dominant meshes in STAR-CCM+ with precise wheel alignment and boundary layer resolution to capture complex flow phenomena. (d) Finally, we leverage industrial-grade CFD simulations that produce comprehensive flow visualizations---including pressure distribution, wall shear stress, velocity fields, streamline patterns, separation regions (via \(C_P=0\) iso-surfaces), and pressure coefficient slices revealing key aerodynamic structures.
+                <h3 class="text-lg font-semibold mb-3 text-primary">Figure 1: DrivAerStar Dataset Overview</h3>
+                <img src="p2.png" alt="DrivAerStar Dataset Overview" class="w-full h-auto rounded">
+                <p class="text-gray-700 text-sm mt-3">
+                   DrivAerStar data generation. (a) Three canonical DrivAer reference bodies (Estateback, Notchback, and Fastback) serve as geometric foundations. (b) Parametric morphing systematically varies 20 vehicle components, including greenhouse (top), rear diffuser (middle), and trunk lid (bottom). (c) Industrial-grade mesh generation in STAR-CCM+® produces refined hexahedral-dominant meshes with precise wheel alignment and boundary layer resolution for complex flow capture. (d) Comprehensive CFD simulations generate diverse flow visualizations: surface pressure, wall shear stress, velocity magnitude, streamline patterns, flow separation regions (\(C_P=0\) iso-surfaces), and pressure coefficient slices revealing key aerodynamic structures.
                 </p>
             </div>
         </div>
 
-        <!-- 图片3：数据集特点 -->
-        <div class="bg-white rounded-lg shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md">
+        <!-- 图2：几何变形流程 -->
+        <div class="bg-white rounded-lg shadow-sm overflow-hidden card-hover">
             <div class="p-5">
-                <h3 class="text-lg font-semibold mb-2 text-primary"> DrivAerStar dataset features</h3>
-                <img src="pf.png" alt="Dataset features" class="w-full h-auto">
-                <p class="text-gray-700 text-sm">
-                    The dataset incorporates (a) We provide different geometry data formats in DrivAerStar. While mesh (top) is our primary data representation, point cloud (bottom) representations enable alternative computational approaches and geometry analysis. (b) Detailed components, including the complete engine bay compartment assembly (top) and vehicle underbody (bottom), distinguish DrivAerStar from previous ones. (c) Accurate internal air flow simulation(showing inlet simulation (top) and outlet (bottom)), enabled by our precise internal components modeling, is capable of supporting research on more automotive systems. (d) Velocity field cross-sectional diagrams, including the internal flow field of the engine compartment at centerline (\(y=0\) m) and the external flow field at the tire axle plane (\(z=0.1\)m).
+                <h3 class="text-lg font-semibold mb-3 text-primary">Figure 2: Geometric Morphing Pipeline</h3>
+                <img src="pf.png" alt="Geometric Morphing Pipeline" class="w-full h-auto rounded">
+                <p class="text-gray-700 text-sm mt-3">
+                     DrivAerStar dataset features. (a) Multiple geometry data formats: mesh (top) serves as primary representation while point cloud (bottom) enables alternative computational approaches and geometry analysis. (b) Complete vehicle modeling includes detailed engine bay compartment assembly (top) and underbody components (bottom), distinguishing DrivAerStar from previous automotive datasets. (c) Internal airflow simulation capabilities featuring air inlet (top) and outlet (bottom) simulations, enabled by precise internal component modeling to support comprehensive automotive system research. (d) Velocity field cross-sections showing internal engine compartment flow at vehicle centerline (\(y=0 m\)) and external flow field at tire axle plane (\(z=0.1 m\)).
                 </p>
             </div>
         </div>
 
-        <!-- 图片4：几何变形示例 -->
-        <div class="bg-white rounded-lg shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md">
+        <!-- 图3：网格策略与验证 -->
+        <div class="bg-white rounded-lg shadow-sm overflow-hidden card-hover">
             <div class="p-5">
-                <h3 class="text-lg font-semibold mb-2 text-primary">An example of geometric morphing</h3>
-                <img src="p3.png" alt="Geometric morphing" class="w-full h-auto">
-                <p class="text-gray-700 text-sm">
-                    Our parametric deformation framework begins with the baseline model and applies three morphing operations: (i) Body components morphing through 15 controlled parameter adjustments, including dimensional modifications and component repositioning, which is displayed on top-left; at the same time, we conduct (ii) wheel morphing with precise tire parameter control. (bottom-left); followed by (iii) whole body scaling and wheel installation (right), we control the 3 whole-body scaling parameters and align the wheels according to the position determined by scaling. This three-stage FFD approach enables systematic generation of geometrically diverse yet aerodynamically realistic vehicle configurations.
+                <h3 class="text-lg font-semibold mb-3 text-primary">Figure 3: Mesh Strategy and Wind Tunnel Validation</h3>
+                <img src="p3.png" alt="Mesh Strategy and Wind Tunnel Validation" class="w-full h-auto rounded">
+                <p class="text-gray-700 text-sm mt-3">
+                    Figure 3:Geometric morphing pipeline example. Our parametric deformation framework transforms the baseline model through three sequential operations: (i) Body component morphing (top-left) applies 15 controlled parameter adjustments, including dimensional modifications and component repositioning; (ii) Wheel morphing (bottom-left) enables precise tire parameter control; and (iii) Whole-body scaling and wheel installation (right) applies 3 scaling parameters while aligning wheels to scaled positions. This systematic FFD approach generates geometrically diverse yet aerodynamically realistic vehicle configurations.
                 </p>
             </div>
         </div>
 
-        <!-- 图片5：网格截面 -->
-        <div class="bg-white rounded-lg shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md">
+        <!-- 图4：内部流场与多物理量 -->
+        <div class="bg-white rounded-lg shadow-sm overflow-hidden card-hover">
             <div class="p-5">
-                <h3 class="text-lg font-semibold mb-2 text-primary">Cross-sectional views of mesh generation strategy</h3>
-                <img src="p4.png" alt="Mesh cross-sections" class="w-full h-auto">
-                <p class="text-gray-700 text-sm">
-                    (a) Longitudinal section at \(y=0\) m revealing four nested refinement zones: far-field (120-480 mm), intermediate domain (\(\leq\) 60 mm), near-body region (\(\leq\) 30 mm), and high-resolution zone (\(\leq\) 15 mm) surrounding the vehicle. The boundary layer implementation incorporates a dedicated 6-layer edge refinement with total thickness under 24 mm to capture viscous phenomena. (b) The transverse section at \(x=3.12\) m demonstrates a consistent refinement strategy with graduated cell density approaching vehicle surfaces. This approach enables accurate resolution of wake structures while maintaining computational efficiency.
+                <h3 class="text-lg font-semibold mb-3 text-primary">Figure 4: Internal Flow and Multi-Physics Results</h3>
+                <img src="p4.png" alt="Internal Flow and Multi-Physics Results" class="w-full h-auto rounded">
+                <p class="text-gray-700 text-sm mt-3">
+                    Cross-sectional views of mesh generation strategy. (a) Longitudinal section at \(y = 0 \, \text{m}\) shows four nested refinement zones with progressive cell density: far-field (120-480 mm), intermediate domain \((\leq 60 \, \text{mm})\), near-body region \((\leq 30 \, \text{mm})\), and high-resolution zone \((\leq 15 \, \text{mm})\) surrounding the vehicle. Dedicated 6-layer boundary layer refinement with total thickness under 24 mm captures viscous phenomena. (b) Transverse section at \(x = 3.12 \, \text{m}\) demonstrates consistent refinement strategy with graduated cell density approaching vehicle surfaces, enabling accurate wake structure resolution while maintaining computational efficiency.
                 </p>
             </div>
         </div>
 
-        <!-- 图片6：气动阻力预测验证 -->
-        <div class="bg-white rounded-lg shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md">
+        <!-- 图5：机器学习基准测试 -->
+        <div class="bg-white rounded-lg shadow-sm overflow-hidden card-hover">
             <div class="p-5">
-                <h3 class="text-lg font-semibold mb-2 text-primary">Validation of aerodynamic drag predictions</h3>
-                <img src="p6.png" alt="Drag prediction validation" class="w-full h-auto">
-                <p class="text-gray-700 text-sm">
-                    Comparison between Loughborough University Large Wind Tunnel experimental measurements and DrivAerStar simulations across three standard rear body configurations using 25%-scale models. All simulations conducted at 40 m/s (144 km/h) with identical boundary conditions.
+                <h3 class="text-lg font-semibold mb-3 text-primary">Figure 5: Machine Learning Benchmarks</h3>
+                <img src="p6.png" alt="Machine Learning Benchmarks" class="w-full h-auto rounded">
+                <p class="text-gray-700 text-sm mt-3">
+                    Validation of flow physics predictions against wind tunnel measurements. (a) Velocity magnitude distributions compare wind tunnel PIV measurements (top row) with DrivAerStar predictions (bottom row) in wake regions and stagnation zones, demonstrating excellent flow structure agreement. (b) Surface pressure coefficient (\(C_P\)) distributions across vehicle body surfaces show consistent prediction accuracy between experimental and computational results for all three vehicle configurations, confirming accurate capture of complex aerodynamic phenomena.
                 </p>
             </div>
         </div>
@@ -246,10 +219,12 @@
 
     <!-- 页脚 -->
     <footer class="w-full text-center text-gray-500 text-sm py-6 border-t border-gray">
-        <p>© DrivAerStar Project | <a href="https://github.com/qiujiyan/DrivAerStar_Benchmarking" target="_blank" 
-           class="text-primary hover:underline flex items-center justify-center mt-1">
-            <i class="fa fa-github mr-1"></i> GitHub Repository
-        </a></p>
+        <p>© 2025 DrivAerStar Project | 
+            <a href="https://github.com/DrivAerStar/DrivAerStar.github.io" target="_blank" 
+               class="text-primary hover:underline flex items-center justify-center mt-1 inline-flex">
+                <i class="fa fa-github mr-1"></i> GitHub Repository
+            </a>
+        </p>
     </footer>
 
     <!-- 缩放功能脚本 -->
@@ -283,4 +258,3 @@
     </script>
 </body>
 </html>
-    
